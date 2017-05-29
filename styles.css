@@ -111,14 +111,17 @@ h2 {
 }
 
 .card {
-  width: 100%;
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  background-color: #fff;
+  margin-bottom: 20px;
   box-shadow: 0 0 7px rgba(0, 0, 0, .5);
   transition: box-shadow 200ms;
 }
 
 .card-header {
-  min-height: 140px;
+  min-height: 150px;
   background-color: #888;
   background-size: cover;
   background-blend-mode: multiply;
@@ -271,20 +274,8 @@ h3 {
 
 @media screen and (min-width: 400px) {
 
-  .main-container {
-    padding: 0 30px 30px;
-  }
-
-  .header-container {
-    padding: 30px;
-  }
-
-  .mobile-menu {
-    position: absolute;
-    top: 30px;
-    left: 25px;
-  }
-  #corgi {
+  #corgi, #bernese,
+  #dachsund {
     background-position: center;
   }
 }
@@ -296,7 +287,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     height: 140px;
-    padding: 20px 20px 20px 25px;
+    padding: 20px 20px 25px 20px;
     margin: auto;
   }
 
@@ -316,6 +307,7 @@ h3 {
     display: flex;
     align-items: flex-start;
     color: #8fd8fe;
+    font-size: 13px;
   }
 
   .login:hover {
@@ -323,7 +315,7 @@ h3 {
   }
 
   .fa-caret-down {
-    padding-left: 10px;
+    padding-left: 5px;
   }
 
   .logo {
@@ -350,10 +342,56 @@ h3 {
   }
 
   .nav-item {
+    color: #969696;
     text-transform: uppercase;
+  }
+
+  .nav-item:hover,
+  .nav-item-active {
+    color: #ffffff;
   }
 
   .fa {
     padding-right: 10px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 650px) {
+
+  .card {
+    margin: 10px;
+    width: 290px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+
+  .header-container {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin: 0 0 -3px;
+    align-self: flex-end;
+  }
+
+  .nav-menu {
+    align-items: flex-end;
+  }
+
+  .nav-item {
+    margin-right: 25px;
   }
 }
