@@ -30,6 +30,7 @@ p {
 }
 
 a {
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -48,7 +49,8 @@ a {
   align-items: flex-end;
 }
 
-.login {
+.login,
+.nav-menu {
   display: none;
 }
 
@@ -66,13 +68,20 @@ header img {
 
 .mobile-menu {
   position: absolute;
-  top: 22px;
+  top: 20px;
   left: 20px;
+}
+
+nav button {
+  background: transparent;
+  border: none;
+  color: #ffffff;
   font-size: 28px;
 }
 
-.nav-menu {
-  display: none;
+nav button:hover {
+  cursor: pointer;
+  color: #8fd8fe;
 }
 
 /*MAIN STYLES*/
@@ -110,18 +119,18 @@ h2 {
 
 .card-header {
   min-height: 140px;
-  background-color: #5a5a5a;
+  background-color: #888;
   background-size: cover;
-  background-position: center;
   background-blend-mode: multiply;
   padding: 12px;
   transition: background-color 200ms, text-shadow 200ms;
-  /*width: 100%;*/
+  width: 100%;
   color: #ffffff;
 }
 
 .card-header:hover {
   background-color: transparent;
+  text-shadow: 0 2px 1px #000;
 }
 
 .card-header-items {
@@ -172,10 +181,12 @@ h2 {
 
 #samoyed {
   background-image: url(assets/samoyed-pup.jpg);
+  background-position: center;
 }
 
 #dachsund {
   background-image: url(assets/dachshund-puppy.jpg);
+  background-position: center;
 }
 
 #rottweiler {
@@ -188,6 +199,7 @@ h2 {
 
 #setter {
   background-image: url(assets/irish-setter.jpg);
+  background-position: center;
 }
 
 .card-body {
@@ -200,9 +212,9 @@ h3 {
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 3px;
-  /*overflow: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;*/
+  white-space: nowrap;
 }
 
 .breed {
@@ -228,6 +240,10 @@ h3 {
   outline: none;
 }
 
+.url:hover {
+  border: 2px solid #888;
+}
+
 .about-dog {
   text-transform: uppercase;
   font-size: 12px;
@@ -246,8 +262,98 @@ h3 {
 }
 
 .age-number {
+  color: #8fd8fe;
   font-size: 32px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /*MEDIA QUERIES*/
+
+@media screen and (min-width: 400px) {
+
+  .main-container {
+    padding: 0 30px 30px;
+  }
+
+  .header-container {
+    padding: 30px;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 30px;
+    left: 25px;
+  }
+  #corgi {
+    background-position: center;
+  }
+}
+
+@media screen and (min-width: 480px) {
+
+  .header-container {
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    height: 140px;
+    padding: 20px 20px 20px 25px;
+    margin: auto;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .login,
+  .nav-menu {
+    display: block;
+  }
+
+  .login {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    display: flex;
+    align-items: flex-start;
+    color: #8fd8fe;
+  }
+
+  .login:hover {
+    color: #ffffff;
+  }
+
+  .fa-caret-down {
+    padding-left: 10px;
+  }
+
+  .logo {
+    width: 100%;
+    margin: 0 auto 20px auto;
+    text-align: center;
+  }
+
+  h1 {
+    padding-top: 20px;
+    font-size: 35px;
+  }
+
+  header img {
+    height: 27px;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: inherit;
+  }
+
+  .nav-item {
+    text-transform: uppercase;
+  }
+
+  .fa {
+    padding-right: 10px;
+  }
+}
